@@ -17,6 +17,8 @@ deploy:
   local-dir: storybook_dist 
   edge: true
   github-token: $GH_TOKEN
+  on:
+    branch: develop # or all_branches: true
 env:
   # matrix:
   # - CXX=g++-4.8
