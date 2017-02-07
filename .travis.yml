@@ -11,8 +11,7 @@ cache:
   directories:
   - node_modules
 after_success:
-- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "develop" && npm
-  run deploy-storybook
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "develop" && npm run deploy-storybook
 env:
   matrix:
   - CXX=g++-4.8
