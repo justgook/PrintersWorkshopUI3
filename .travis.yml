@@ -10,8 +10,8 @@ cache:
   yarn: true
   directories:
   - node_modules
-# after_success:
-# - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "develop" && npm run deploy-storybook
+after_success:
+ - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "develop" && npm run deploy-storybook
 deploy:
   provider: pages 
   local-dir: storybook_dist 
