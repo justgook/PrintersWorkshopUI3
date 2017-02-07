@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "deploy-storybook": "build-storybook -o storybook_dist && cd storybook_dist && git init && git config user.name \"Travis-CI\" && git config user.email \"$COMMIT_AUTHOR_EMAIL\"  && git add . && git commit -am \"Deploy Storybook to GitHub Pages\" && git push --force --quiet \"https://$GH_TOKEN@github.com/justgook/PrintersWorkshopUI3.git\" master:gh-pages",
+    "deploy-storybook": "build-storybook -o storybook_dist && cd storybook_dist && git config user.name \"Travis-CI\" && git config user.email \"$COMMIT_AUTHOR_EMAIL\" && git init  && git add . && git commit -am \"Deploy Storybook to GitHub Pages\" && git push --force --quiet \"https://$GH_TOKEN@github.com/justgook/PrintersWorkshopUI3.git\" master:gh-pages",
     "test": "echo \"no test specified\" && exit 0"
   },
   "keywords": [],
