@@ -10,10 +10,11 @@ cache:
   yarn: true
   directories:
   - node_modules
-after_success:
- - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "develop" && npm run deploy-storybook
+before_deploy:
+ - npm run deploy-storybook
 deploy:
   provider: pages 
+  skip_cleanup: true
   local-dir: storybook_dist 
   edge: true
   github-token: $GH_TOKEN
