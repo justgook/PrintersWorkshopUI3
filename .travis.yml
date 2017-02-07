@@ -2,23 +2,25 @@ branches:
   only:
   - master
   - develop
-  - /^greenkeeper-.*$/
+  - "/^greenkeeper-.*$/"
 language: node_js
 node_js:
-  - "7.5.0"
+- 7.5.0
 cache:
   yarn: true
   directories:
-    - node_modules
-
+  - node_modules
 after_success:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "develop" && npm run deploy-storybook
-
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "develop" && npm
+  run deploy-storybook
 env:
+  matrix:
   - CXX=g++-4.8
+  global:
+    secure: fTcnJc/AVzlrwYxHjFVys5xYzE6INuuRH2lQbNzfXvdJocQmLGiTxCNSV5iOZbEm8qSXtGEDKa4BEaCKW59SnCGvYOcnu5Jp2t9aWTklgbjFHxdjCb4a+Z9IkVsoC+vNZQ5a3IDoQcuyhSp+6pHy8o4dATbd/Q+VzJqidoA9RAODHrA6y0Xivi/l5NRWNi4gUgRvFCOV2Ysl8K9unzfX4C4Q+1da0r8HScr3Ca5kdkA0r9CtuTDK6SOC2M5OEmxdhdxc5NI0Gj5TdrVtR8LAVRNkUr7jqBoL63iIC9RsTBTO422rJn0kuZcJfK2xHmhVmhgl8uR8bLN8Uevkcuwp5l1+FeQUXjJYQKpp9SI5e2PvhLR8Jv5E76mR022s1TE0d3f/jKkeCCdiZydVzMmDCbHf5mBO1tnKiC0YqpOXhDMDT3H4oSgo0p8sK3Vej6pImnRhAZZUR0ExNgEmiP3zfD8XpK6dFh2PdcAZVkcdnaL4GJ+tzhpkC6vpAmavnMtRKdtcSDE8TeDzfa1bt7DjjdmzhWoHwWr79WiAX3L4taJIFW59bUpcWx0VUs3EWVUDV5Y8BkWsiqmu9IJDmGenTxdlpBRzetVutpLbeGGVV0t6sGb+W0F06GKbxC74VZgpryBKfxlWhRNn31Lq+d9ROE1WpSf0OEiQMO/gH9VfRRA=
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
+    - g++-4.8

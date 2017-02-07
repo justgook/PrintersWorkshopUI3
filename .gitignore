@@ -26,6 +26,7 @@ build/Release
 
 #Build folder
 dist
+storybook_dist
 
 # Dependency directories
 node_modules

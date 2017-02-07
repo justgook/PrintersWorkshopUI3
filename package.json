@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "deploy-storybook": "storybook-to-ghpages",
+    "deploy-storybook": "build-storybook -o storybook_dist && cd storybook_dist && git init && git add . && git commit -am \"Deploy Storybook to GitHub Pages\" && git push --force --quiet \"https://$GH_TOKEN@github.com/justgook/PrintersWorkshopUI3.git\" master:gh-pages",
     "test": "echo \"no test specified\" && exit 0"
   },
   "keywords": [],
@@ -19,7 +19,6 @@
     "@kadira/storybook": "2.35.3",
     "@kadira/storybook-addon-knobs": "1.7.1",
     "@kadira/storybook-addon-options": "1.0.1",
-    "@kadira/storybook-deployer": "1.2.0",
     "file-loader": "0.10.0",
     "storybook-addon-material-ui": "0.7.5"
   },
