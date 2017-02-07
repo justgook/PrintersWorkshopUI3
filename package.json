@@ -2,13 +2,14 @@
   "name": "printerworkshopUI3",
   "version": "1.0.0",
   "description": "",
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/justgook/PrintersWorkshopUI3.git"
   },
   "main": "index.js",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "deploy-storybook": "storybook-to-ghpages",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,6 +19,7 @@
     "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-addon-knobs": "1.7.1",
     "@kadira/storybook-addon-options": "^1.0.1",
+    "@kadira/storybook-deployer": "1.2.0",
     "file-loader": "^0.10.0",
     "storybook-addon-material-ui": "^0.7.5"
   },

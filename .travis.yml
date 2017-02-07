@@ -1,0 +1,13 @@
+branches:
+  only:
+  - master
+  - develop
+  - /^greenkeeper-.*$/
+language: node_js
+cache:
+  directories:
+    - node_modules
+install:
+  - npm install
+after_success:
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "develop" && npm run deploy-storybook
