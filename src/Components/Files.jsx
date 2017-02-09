@@ -32,26 +32,25 @@ class FileMenu extends Component {
 }
 
 class Files extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     // console.log(props)
   }
   render() {
     return (
-      <div>
-        <List>
-          <ListItem 
-          primaryText="first_print.gcode" 
-          secondaryText="30KB" 
-          leftIcon={<FontIcon className="material-icons">description</FontIcon>}
-          rightIconButton={<FileMenu />} 
-          />
-          <ListItem primaryText="Starred" leftIcon={<FontIcon className="material-icons">description</FontIcon>} />
-          <ListItem primaryText="Sent mail" leftIcon={<FontIcon className="material-icons">description</FontIcon>} />
-          <ListItem primaryText="Drafts" leftIcon={<FontIcon className="material-icons">description</FontIcon>} />
-          <ListItem primaryText="Inbox" leftIcon={<FontIcon className="material-icons">description</FontIcon>} />
-        </List>
-      </div>
+      <List>
+        <ListItem
+          primaryText="first_print.gcode"
+          secondaryText="30KB"
+          leftIcon={<FontIcon className="material-icons">assignment</FontIcon>}
+          rightIconButton={<FileMenu />}
+        />
+        <ListItem primaryText="Starred" leftIcon={<FontIcon className="material-icons">description</FontIcon>} />
+        <ListItem primaryText="Sent mail" leftIcon={<FontIcon className="material-icons">description</FontIcon>} />
+        <ListItem primaryText="Drafts" leftIcon={<FontIcon className="material-icons">description</FontIcon>} />
+        <ListItem primaryText="Inbox" leftIcon={<FontIcon className="material-icons">description</FontIcon>} />
+      </List>
+
     )
   }
 }

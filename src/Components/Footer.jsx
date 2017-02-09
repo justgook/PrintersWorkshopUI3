@@ -15,7 +15,7 @@ const nearbyIcon = <IconLocationOn />;
 
 class Footer extends Component {
   state = {
-    selectedIndex: 0
+    selectedIndex: 1
   };
 
   select = (index) => this.setState({ selectedIndex: index });
