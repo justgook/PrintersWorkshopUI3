@@ -21,11 +21,6 @@ class FileMenu extends Component {
         {...this.props}
       >
         <MenuItem primaryText="Print" leftIcon={<FontIcon className="material-icons">print</FontIcon>} />
-        {/*<MenuItem primaryText="Refresh" />
-        <MenuItem primaryText="Send feedback" />
-        <MenuItem primaryText="Settings" />
-        <MenuItem primaryText="Help" />
-        <MenuItem primaryText="Sign out" />*/}
       </IconMenu>
     )
   }

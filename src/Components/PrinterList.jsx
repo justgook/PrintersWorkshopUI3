@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PrinterInfo from './PrinterInfo'
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import IconButton from 'material-ui/IconButton';
@@ -8,6 +9,8 @@ import Paper from 'material-ui/Paper'
 import { List, ListItem } from 'material-ui/List'
 import LinearProgress from 'material-ui/LinearProgress'
 import { VictoryChart, VictoryLine, VictoryContainer } from 'victory'
+import Dialog from 'material-ui/Dialog'
+
 const style = {
   height: 100,
   width: 100,
@@ -25,7 +28,9 @@ const Status = ({status, ...props}) => {
 
 
 class Printer extends Component {
+  closeDialog = () => console.log('close')
   render() {
+    const {detailed} = this.props
     return (
       <ListItem leftIcon={<Status status="printing" />}>
         Kosel Mini
@@ -35,34 +40,18 @@ class Printer extends Component {
         >
           <VictoryLine y={(data) => Math.sin(2 * Math.PI * data.x)} />
         </VictoryChart>
+        {
+          detailed && <Dialog
+          modal={false}
+          open={detailed}
+          onRequestClose={this.closeDialog}
+        >
+          <PrinterInfo />
+        </Dialog>
+        }
+        
       </ListItem>
     )
-    /*return (
-      <Card>
-        <CardHeader
-          title=    {<Badge
-      badgeContent="&copy;"
-      badgeStyle={{fontSize: 20}}
-    >
-      Kossel Mini
-    </Badge>}
-          subtitle="just anather printer"
-          actAsExpander={true}
-          showExpandableButton={true}
-          avatar={<Avatar>KM</Avatar>}
-        />
-        <CardActions>
-          <FlatButton label="Action1" />
-          <FlatButton label="Action2" />
-        </CardActions>
-        <CardText expandable={true}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-          Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-          Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-        </CardText>
-      </Card>
-    )*/
   }
 }
 
@@ -70,7 +59,7 @@ class PrinterList extends Component {
   render() {
     return (
       <List>
-        <Printer />
+        <Printer detailed={true} />
         <Printer />
         <Printer />
 
